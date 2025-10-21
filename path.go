@@ -1,5 +1,5 @@
 // ⚡️ Fiber is an Express inspired web framework written in Go with ☕️
-// 📄 Github Repository: https://github.com/gofiber/fiber
+// 📄 GitHub Repository: https://github.com/gofiber/fiber
 // 📌 API Documentation: https://docs.gofiber.io
 // ⚠️ This path parser was inspired by ucarion/urlpath (MIT License).
 // 💖 Maintained and modified for Fiber by @renewerner87
@@ -259,12 +259,12 @@ func addParameterMetaInfo(segs []*routeSegment) []*routeSegment {
 		}
 	}
 
-	// loop from begin to end
+	// loop from beginning to end
 	for i := range segLen {
 		// check how often the compare part is in the following const parts
 		if segs[i].IsParam {
-			// check if parameter segments are directly after each other and if one of them is greedy
-			// in case the next parameter or the current parameter is not a wildcard it's not greedy, we only want one character
+			// check if parameter segments are directly after each other;
+			// when neither this parameter nor the next parameter are greedy, we only want one character
 			if segLen > i+1 && !segs[i].IsGreedy && segs[i+1].IsParam && !segs[i+1].IsGreedy {
 				segs[i].Length = 1
 			}
